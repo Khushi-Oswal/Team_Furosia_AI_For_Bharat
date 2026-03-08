@@ -5,9 +5,9 @@ AWS Bedrock Region Languages Agents Analysis
 
 Team: The Furiosa | Leader: Khushi Oswal
 
-Live Demo: https://staging.d28iblk6unybu5.amplifyapp.com
+Live Demo: [https://staging.d28iblk6unybu5.amplifyapp.com](https://staging.d1ayudw2b2ig4f.amplifyapp.com/)
 
-GitHub: https://github.com/Khushi-Oswal/temp
+GitHub: https://github.com/Khushi-Oswal/Team_Furosia_AI_For_Bharat
 
 📋 Table of Contents
 What is BioClock?
