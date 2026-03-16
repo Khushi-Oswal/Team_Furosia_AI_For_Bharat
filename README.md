@@ -1,44 +1,66 @@
-🧬 BioClock — Multi-Agent Predictive Health System
-Predict. Prevent. Thrive. — For Every Indian.
+# 🧬 BioClock — Multi-Agent Predictive Health System
 
-AWS Bedrock Region Languages Agents Analysis
+> **Predict. Prevent. Thrive. — For Every Indian.**
 
-Team: The Furiosa | Leader: Khushi Oswal
+[![AWS](https://img.shields.io/badge/AWS-Powered-FF9900?style=flat&logo=amazonaws)](https://aws.amazon.com)
+[![Bedrock](https://img.shields.io/badge/Amazon-Bedrock-232F3E?style=flat&logo=amazonaws)](https://aws.amazon.com/bedrock)
+[![Region](https://img.shields.io/badge/Region-ap--south--1-blue?style=flat)](https://aws.amazon.com/about-aws/global-infrastructure/regions_az/)
+[![Languages](https://img.shields.io/badge/Languages-8%20Indian-green?style=flat)](.)
+[![Agents](https://img.shields.io/badge/AI%20Agents-4%20Specialized-purple?style=flat)](.)
+[![Analysis](https://img.shields.io/badge/Analysis%20Time-20--40%20seconds-brightgreen?style=flat)](.)
 
-Live Demo: [https://staging.d28iblk6unybu5.amplifyapp.com](https://staging.d1ayudw2b2ig4f.amplifyapp.com/)
+**Team:** The Furiosa | **Leader:** Khushi Oswal
 
-GitHub: https://github.com/Khushi-Oswal/Team_Furosia_AI_For_Bharat
+**Live Demo:** [https://staging.d28iblk6unybu5.amplifyapp.com](https://staging.d28iblk6unybu5.amplifyapp.com)
 
-📋 Table of Contents
-What is BioClock?
-The Problem
-Our Solution
-System Architecture
-AI Agent Pipeline
-Data Lake Architecture
-AWS Services
-Getting Started
-API Reference
-Project Structure
-Hackathon Highlights
-🧬 What is BioClock?
-BioClock transforms routine blood test reports into comprehensive disease risk predictions in under 40 seconds — powered by a 4-agent Amazon Bedrock pipeline with an autonomous supervisor running on AWS serverless infrastructure.
+**GitHub:** [https://github.com/Khushi-Oswal/temp](https://github.com/Khushi-Oswal/temp)
 
+---
+
+## 📋 Table of Contents
+
+- [What is BioClock?](#-what-is-bioclock)
+- [The Problem](#-the-problem)
+- [Our Solution](#-our-solution)
+- [System Architecture](#-system-architecture)
+- [AI Agent Pipeline](#-ai-agent-pipeline)
+- [Data Lake Architecture](#-data-lake-architecture)
+- [AWS Services](#-aws-services)
+- [Getting Started](#-getting-started)
+- [API Reference](#-api-reference)
+- [Project Structure](#-project-structure)
+- [Hackathon Highlights](#-hackathon-highlights)
+
+---
+
+## 🧬 What is BioClock?
+
+BioClock transforms routine blood test reports into comprehensive disease risk predictions in under **40 seconds** — powered by a 4-agent Amazon Bedrock pipeline with an autonomous supervisor running on AWS serverless infrastructure.
+
+```
 User pastes lab report  →  AI extracts biomarkers  →  4 agents analyze  →  Full report in 20-40s
 Text from Apollo/SRL/       Bedrock AI reads           Temporal trends       Disease predictions
 Thyrocare/Dr. Lal            unstructured text           Correlations          Intervention plan
 PathLabs report                                         Trajectories          8 Indian languages
-🚨 The Problem
-Challenge	Scale
-Indians with diabetes	77 million (2nd highest globally)
-Pre-diabetics (unaware)	136 million
-Deaths from chronic diseases	63% of all deaths
-Healthcare spending out-of-pocket	70% of families
-Average diabetes detection delay	5-7 years
-Preventable chronic diseases	80% with early intervention
-Doctors' appointment duration	15 minutes (can't track multi-year trends)
-The core issue: Healthcare in India is reactive. We wait for symptoms before acting. By diagnosis, organ damage has already occurred. Blood tests contain warning signals years before symptoms — but nobody connects the dots.
+```
 
+---
+
+## 🚨 The Problem
+
+| Challenge | Scale |
+|-----------|-------|
+| Indians with diabetes | **77 million** (2nd highest globally) |
+| Pre-diabetics (unaware) | **136 million** |
+| Deaths from chronic diseases | **63%** of all deaths |
+| Healthcare spending out-of-pocket | **70%** of families |
+| Average diabetes detection delay | **5-7 years** |
+| Preventable chronic diseases | **80%** with early intervention |
+| Doctors' appointment duration | **15 minutes** (can't track multi-year trends) |
+
+> **The core issue:** Healthcare in India is reactive. We wait for symptoms before acting. By diagnosis, organ damage has already occurred. Blood tests contain warning signals years before symptoms — but nobody connects the dots.
+
+```
 What happens today:
   Year 1: HbA1c 5.4% → "Normal"
   Year 2: HbA1c 5.6% → "Normal"
@@ -55,9 +77,15 @@ What BioClock does:
   Year 3: HbA1c 5.8% → BioClock: "78% diabetes risk in 3 years"
                         → "Start ragi diet, Surya Namaskar, Vitamin D"
                         → "Will cross threshold in 18 months without intervention"
-💡 Our Solution
-BioClock provides instant, AI-powered disease risk prediction with India-specific interventions — from a routine blood test.
+```
 
+---
+
+## 💡 Our Solution
+
+BioClock provides **instant, AI-powered disease risk prediction** with India-specific interventions — from a routine blood test.
+
+```
 ┌──────────────────────────────────────────────────────────────────┐
 │                          BioClock                                 │
 │                                                                   │
@@ -72,8 +100,15 @@ BioClock provides instant, AI-powered disease risk prediction with India-specifi
 │                                                                   │
 │  Total Time: 20-40 seconds  │  Cost: ~$0.12/analysis             │
 └──────────────────────────────────────────────────────────────────┘
-🏗️ System Architecture
-High-Level Flow
+```
+
+---
+
+## 🏗️ System Architecture
+
+### High-Level Flow
+
+```
 ┌──────────┐      ┌─────────────┐      ┌──────────────┐      ┌─────────────────┐
 │  React   │      │ API Gateway │      │  Cognito JWT │      │  Lambda         │
 │  Web App │────▶│  REST API   │────▶│  Authorizer  │────▶│  bioclock-      │
@@ -166,8 +201,15 @@ PARALLEL BATCH PIPELINE (Glue):
                                  Glue Crawlers → Glue Catalog
                                        │
                                  Athena SQL queries
-🤖 AI Agent Pipeline
-4 Specialist Agents + Autonomous Supervisor
+```
+
+---
+
+## 🤖 AI Agent Pipeline
+
+### 4 Specialist Agents + Autonomous Supervisor
+
+```
                         ┌──────────────────────────────────────┐
                         │        PATIENT GOLD DATA              │
                         │  12 biomarkers, trends, risk flags    │
@@ -256,18 +298,25 @@ PARALLEL BATCH PIPELINE (Glue):
                               │   rounds. Vitamin D3 │
                               │   60,000 IU/week."   │
                               └─────────────────────┘
-RAG Context (Indian Medical Knowledge)
-Every agent prompt includes 120+ lines of Indian medical reference data:
+```
 
-Category	Data Source	Key Facts
-Metabolic	ICMR 2023, INDIAB Study	Indian BMI cutoff 23 (not 30), 11.4% diabetes prevalence
-Cardiovascular	INTERHEART South Asia	Indians get MI at age 53 (vs 63 in West), atherogenic dyslipidemia #1 pattern
-Renal	SEEK-India	17% CKD prevalence, diabetes + hypertension = dual hit
-Thyroid	Indian Thyroid Society	11% prevalence, higher in women and coastal regions
-Vitamin D	INDIAB, CURES studies	70-80% urban Indians deficient despite tropical climate
-Diet	NIN (Hyderabad)	Ragi GI 54, Jowar GI 62, Methi reduces FG by 12-15 mg/dL
-Exercise	Yoga Mimamsa Journal	Surya Namaskar improves insulin sensitivity by 20%
-3-Layer Fallback Mechanism
+### RAG Context (Indian Medical Knowledge)
+
+Every agent prompt includes **120+ lines of Indian medical reference data**:
+
+| Category | Data Source | Key Facts |
+|----------|-----------|-----------|
+| Metabolic | ICMR 2023, INDIAB Study | Indian BMI cutoff 23 (not 30), 11.4% diabetes prevalence |
+| Cardiovascular | INTERHEART South Asia | Indians get MI at age 53 (vs 63 in West), atherogenic dyslipidemia #1 pattern |
+| Renal | SEEK-India | 17% CKD prevalence, diabetes + hypertension = dual hit |
+| Thyroid | Indian Thyroid Society | 11% prevalence, higher in women and coastal regions |
+| Vitamin D | INDIAB, CURES studies | 70-80% urban Indians deficient despite tropical climate |
+| Diet | NIN (Hyderabad) | Ragi GI 54, Jowar GI 62, Methi reduces FG by 12-15 mg/dL |
+| Exercise | Yoga Mimamsa Journal | Surya Namaskar improves insulin sensitivity by 20% |
+
+### 3-Layer Fallback Mechanism
+
+```
 ┌──────────────────┐     ┌──────────────────┐     ┌──────────────────┐     ┌──────────────────┐
 │  Layer 1          │     │  Layer 2          │     │  Layer 3          │     │  Layer 4          │
 │  Nova Lite        │────▶│  Nova Pro         │────▶│  S3 Cache         │────▶│  Rule-Based       │
@@ -276,8 +325,15 @@ Exercise	Yoga Mimamsa Journal	Surya Namaskar improves insulin sensitivity by 20%
 └──────────────────┘     └──────────────────┘     └──────────────────┘     └──────────────────┘
 
 Every response includes: _source = "bedrock_live" | "cache" | "rule_based_fallback"
-🗄️ Data Lake Architecture
-Dual Pipeline (Real-Time + Batch)
+```
+
+---
+
+## 🗄️ Data Lake Architecture
+
+### Dual Pipeline (Real-Time + Batch)
+
+```
 ┌──────────────────────────────────────────────────────────────────┐
 │                    REAL-TIME PIPELINE (Lambda)                     │
 │                                                                    │
@@ -298,7 +354,11 @@ Dual Pipeline (Real-Time + Batch)
 │                  → Glue Crawlers → Glue Catalog                   │
 │                  → Athena SQL queries for population analytics    │
 └──────────────────────────────────────────────────────────────────┘
-S3 Bucket Structure
+```
+
+### S3 Bucket Structure
+
+```
 bioclock-health-data/
 ├── medallion/
 │   ├── bronze/{patient_id}/           Raw ingested JSON
@@ -314,48 +374,68 @@ bioclock-health-data/
 ├── gold-parquet/                      Aggregated analytics
 ├── reasoning/                         Session reasoning JSONs
 └── users/{patient_id}/                User profiles
-☁️ AWS Services
-13 Services Used
-#	Service	Purpose	Region	Tier
-1	Amplify	Frontend hosting	us-east-1	Free
-2	Cognito	Auth (JWT + email OTP)	ap-south-1	Free (50K MAU)
-3	API Gateway	REST API (7 routes)	ap-south-1	Free (1M req)
-4	Lambda (×12)	Serverless compute	ap-south-1	Free (1M req)
-5	S3	Data lake (Medallion)	ap-south-1	~$1/month
-6	DynamoDB	Patient cache + lookups	ap-south-1	Free (25GB)
-7	Bedrock	AI inference (Nova Lite/Pro)	us-east-1	~$65/month
-8	Translate	8 Indian languages	ap-south-1	~$3/month
-9	Glue	3 batch ETL PySpark jobs	ap-south-1	~$3/month
-10	Glue Catalog	Schema metadata for Athena	ap-south-1	Free
-11	Athena	SQL on Parquet	ap-south-1	$5/TB scanned
-12	CloudWatch	Logging + billing alarms	ap-south-1	Free tier
-13	IAM	Least-privilege roles	Global	Free
-Additional: Lambda Function URL (bypasses API Gateway 29s timeout), Step Functions (orchestration definition)
+```
 
-Total monthly cost: Under $100
+---
 
-Lambda Function Configurations
-Function	Timeout	Memory	IAM Policies
-bioclock-ingest	30s	128MB	S3 + DynamoDB
-bioclock-etl	1 min	256MB	S3 + DynamoDB
-bioclock-analyze	5 min	512MB	S3 + Lambda (invoke agents)
-bioclock-agent-temporal	2 min	256MB	S3 + Bedrock
-bioclock-agent-correlator	2 min	256MB	S3 + Bedrock
-bioclock-agent-trajectory	2 min	256MB	S3 + Bedrock
-bioclock-agent-intervention	2 min	256MB	S3 + Bedrock
-bioclock-patients	30s	128MB	DynamoDB
-bioclock-predict	30s	128MB	DynamoDB + S3
-bioclock-reasoning	30s	128MB	S3
-bioclock-translate	2 min	256MB	Translate + Bedrock
-bioclock-parse-report	2 min	256MB	S3 + Bedrock
-🚀 Getting Started
-Prerequisites
+## ☁️ AWS Services
+
+### 13 Services Used
+
+| # | Service | Purpose | Region | Tier |
+|---|---------|---------|--------|------|
+| 1 | **Amplify** | Frontend hosting | us-east-1 | Free |
+| 2 | **Cognito** | Auth (JWT + email OTP) | ap-south-1 | Free (50K MAU) |
+| 3 | **API Gateway** | REST API (7 routes) | ap-south-1 | Free (1M req) |
+| 4 | **Lambda** (×12) | Serverless compute | ap-south-1 | Free (1M req) |
+| 5 | **S3** | Data lake (Medallion) | ap-south-1 | ~$1/month |
+| 6 | **DynamoDB** | Patient cache + lookups | ap-south-1 | Free (25GB) |
+| 7 | **Bedrock** | AI inference (Nova Lite/Pro) | us-east-1 | ~$65/month |
+| 8 | **Translate** | 8 Indian languages | ap-south-1 | ~$3/month |
+| 9 | **Glue** | 3 batch ETL PySpark jobs | ap-south-1 | ~$3/month |
+| 10 | **Glue Catalog** | Schema metadata for Athena | ap-south-1 | Free |
+| 11 | **Athena** | SQL on Parquet | ap-south-1 | $5/TB scanned |
+| 12 | **CloudWatch** | Logging + billing alarms | ap-south-1 | Free tier |
+| 13 | **IAM** | Least-privilege roles | Global | Free |
+
+**Additional:** Lambda Function URL (bypasses API Gateway 29s timeout), Step Functions (orchestration definition)
+
+**Total monthly cost: Under $100**
+
+### Lambda Function Configurations
+
+| Function | Timeout | Memory | IAM Policies |
+|----------|---------|--------|-------------|
+| `bioclock-ingest` | 30s | 128MB | S3 + DynamoDB |
+| `bioclock-etl` | 1 min | 256MB | S3 + DynamoDB |
+| `bioclock-analyze` | 5 min | 512MB | S3 + Lambda (invoke agents) |
+| `bioclock-agent-temporal` | 2 min | 256MB | S3 + Bedrock |
+| `bioclock-agent-correlator` | 2 min | 256MB | S3 + Bedrock |
+| `bioclock-agent-trajectory` | 2 min | 256MB | S3 + Bedrock |
+| `bioclock-agent-intervention` | 2 min | 256MB | S3 + Bedrock |
+| `bioclock-patients` | 30s | 128MB | DynamoDB |
+| `bioclock-predict` | 30s | 128MB | DynamoDB + S3 |
+| `bioclock-reasoning` | 30s | 128MB | S3 |
+| `bioclock-translate` | 2 min | 256MB | Translate + Bedrock |
+| `bioclock-parse-report` | 2 min | 256MB | S3 + Bedrock |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+```bash
 # Node.js >= 18
 node --version
 
 # npm >= 9
 npm --version
-Frontend Setup
+```
+
+### Frontend Setup
+
+```bash
 # Clone repository
 git clone https://github.com/Khushi-Oswal/temp.git
 cd temp/frontend
@@ -370,28 +450,44 @@ npm run dev
 # Build for production
 npm run build
 # Output in dist/ folder
-Configuration
-Edit frontend/src/utils/auth.jsx:
+```
 
+### Configuration
+
+Edit `frontend/src/utils/auth.jsx`:
+```js
 const POOL_DATA = {
   UserPoolId: 'ap-south-1_XXXXXXXX',   // Your Cognito User Pool ID
   ClientId: 'xxxxxxxxxxxxxxxxxx',        // Your App Client ID
 }
-Edit frontend/src/utils/api.js:
+```
 
+Edit `frontend/src/utils/api.js`:
+```js
 const BASE_URL = 'https://YOUR-API-ID.execute-api.ap-south-1.amazonaws.com/Dev'
 const ANALYZE_URL = 'https://YOUR-FUNCTION-URL.lambda-url.ap-south-1.on.aws'
-Deploy to AWS Amplify
+```
+
+### Deploy to AWS Amplify
+
+```bash
 cd frontend
 npm run build
 cd dist
 zip -r ../deploy.zip .
 # Upload deploy.zip to Amplify Console → Deploy updates
-Amplify SPA Rewrite Rule (Required)
-Source: /<*>    Target: /index.html    Status: 404-200
-Deploy Lambda Functions
-Deploy all 12 Python files from backend/lambda/ to AWS Lambda Console:
+```
 
+### Amplify SPA Rewrite Rule (Required)
+
+```
+Source: /<*>    Target: /index.html    Status: 404-200
+```
+
+### Deploy Lambda Functions
+
+Deploy all 12 Python files from `backend/lambda/` to AWS Lambda Console:
+```bash
 # For each Lambda function:
 1. Lambda Console → Create/Select function
 2. Paste code from backend/lambda/bioclock-{name}.py
@@ -400,7 +496,11 @@ Deploy all 12 Python files from backend/lambda/ to AWS Lambda Console:
 5. Add Environment Variables: BUCKET_NAME, BEDROCK_REGION, DYNAMODB_TABLE
 6. Add IAM Policies (see table above)
 7. Click Deploy
-Deploy Glue Scripts
+```
+
+### Deploy Glue Scripts
+
+```bash
 # Upload Glue scripts to S3
 aws s3 cp backend/glue/bioclock-bronze-etl.py s3://bioclock-health-data/glue-scripts/
 aws s3 cp backend/glue/bioclock-silver-etl.py s3://bioclock-health-data/glue-scripts/
@@ -411,7 +511,11 @@ aws s3 cp backend/glue/bioclock-gold-etl.py   s3://bioclock-health-data/glue-scr
 # - Worker type: G.1X
 # - Number of workers: 2
 # - Timeout: 10 minutes
-Create DynamoDB Tables
+```
+
+### Create DynamoDB Tables
+
+```bash
 # Table 1: Patient records
 aws dynamodb create-table \
   --table-name bioclock-patients \
@@ -427,8 +531,15 @@ aws dynamodb create-table \
   --key-schema AttributeName=patient_id,KeyType=HASH \
   --billing-mode PAY_PER_REQUEST \
   --region ap-south-1
-📡 API Reference
-Submit Patient Data
+```
+
+---
+
+## 📡 API Reference
+
+### Submit Patient Data
+
+```http
 POST /api/ingest
 Authorization: Bearer {cognito_jwt}
 Content-Type: application/json
@@ -455,8 +566,10 @@ Content-Type: application/json
   "uric_acid": 6.8,
   "hemoglobin": 13.5
 }
-Response:
+```
 
+**Response:**
+```json
 {
   "message": "Patient data ingested successfully",
   "patient_id": "BIO8X2B14HH",
@@ -465,15 +578,21 @@ Response:
   "source": "manual_entry",
   "storage": "dynamodb + s3"
 }
-AI Lab Report Parsing
+```
+
+### AI Lab Report Parsing
+
+```http
 POST /api/parse-report
 Content-Type: application/json
 
 {
   "report_text": "Apollo Diagnostics\nPatient: Arjun Sharma, 45/M\nHbA1c: 6.8%\nFasting Blood Sugar: 118 mg/dL\nTotal Cholesterol: 220 mg/dL\nLDL: 145 mg/dL\nHDL: 38 mg/dL\nTriglycerides: 195 mg/dL..."
 }
-Response:
+```
 
+**Response:**
+```json
 {
   "extracted_biomarkers": {
     "hba1c": 6.8,
@@ -491,15 +610,21 @@ Response:
   "confidence": "high",
   "_model_used": "amazon.nova-lite-v1:0"
 }
-Run AI Analysis
+```
+
+### Run AI Analysis
+
+```http
 POST https://{function-url}.lambda-url.ap-south-1.on.aws/
 Content-Type: application/json
 
 {
   "patient_id": "BIO8X2B14HH"
 }
-Response (complete — all 4 agents):
+```
 
+**Response (complete — all 4 agents):**
+```json
 {
   "session_id": "session_BIO8X2B14HH_20260308_094655",
   "patient_id": "BIO8X2B14HH",
@@ -528,10 +653,18 @@ Response (complete — all 4 agents):
     "agent4_source": "bedrock_live"
   }
 }
-Get Patient List (Per-User Filtered)
+```
+
+### Get Patient List (Per-User Filtered)
+
+```http
 GET /api/patients?user_id={cognito_sub}
 Authorization: Bearer {cognito_jwt}
-Translate
+```
+
+### Translate
+
+```http
 POST /api/translate
 Content-Type: application/json
 
@@ -539,7 +672,13 @@ Content-Type: application/json
   "text": "Your HbA1c is 6.8% indicating diabetes...",
   "target_language": "hi"
 }
-📁 Project Structure
+```
+
+---
+
+## 📁 Project Structure
+
+```
 bioclock/
 ├── 📄  README.md                                 # This file
 ├── 🔒  .gitignore                                # Git ignore rules
@@ -610,8 +749,15 @@ bioclock/
     ├── 📄  03_HIGH_Risk_Arjun_Sharma.pdf
     ├── 📄  04_CRITICAL_Risk_Rajesh_Iyer.pdf
     └── 📄  05_QUICK_TEST_Priya_Patel.pdf
-🏆 Hackathon Highlights
-AWS AI for Bharat — Key Innovations
+```
+
+---
+
+## 🏆 Hackathon Highlights
+
+### AWS AI for Bharat — Key Innovations
+
+```
 ┌──────────────────────────────────────────────────────────────────┐
 │                    INNOVATION HIGHLIGHTS                          │
 │                                                                   │
@@ -659,10 +805,24 @@ AWS AI for Bharat — Key Innovations
 │      Real-time (Lambda): User → Bronze → Silver → Gold → AI      │
 │      Batch (Glue): CSV → Parquet → Athena → Population analytics │
 └──────────────────────────────────────────────────────────────────┘
-Target Impact
-77M+ diabetics in India (early detection saves lives)
-136M pre-diabetics (intervention window before diagnosis)
-80% of chronic diseases are preventable with early action
-60% cost reduction in healthcare with prevention vs treatment
-8 languages covering 90%+ of India's population
-<div align="center"> **🧬 BioClock — Transforming Indian Healthcare with AI** *Predict. Prevent. Thrive.* `ap-south-1` · `Amazon Bedrock` · `Serverless` · `Made for Bharat` </div>
+```
+
+### Target Impact
+
+- **77M+** diabetics in India (early detection saves lives)
+- **136M** pre-diabetics (intervention window before diagnosis)
+- **80%** of chronic diseases are preventable with early action
+- **60%** cost reduction in healthcare with prevention vs treatment
+- **8 languages** covering 90%+ of India's population
+
+---
+
+<div align="center">
+
+**🧬 BioClock — Transforming Indian Healthcare with AI**
+
+*Predict. Prevent. Thrive.*
+
+`ap-south-1` · `Amazon Bedrock` · `Serverless` · `Made for Bharat`
+
+</div>
